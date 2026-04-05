@@ -146,7 +146,11 @@ export default async function Home({ searchParams }: PageProps) {
               </span>
             </div>
             {d.mapPoints.length > 0 ? (
-              <MapPanel center={d.mapCenter} points={d.mapPoints} />
+              <MapPanel
+                key={d.placeQuery}
+                center={d.mapCenter}
+                points={d.mapPoints}
+              />
             ) : (
               <EmptyPanel>
                 {d.region.bayArea ? (

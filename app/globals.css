@@ -24,3 +24,11 @@ body {
   z-index: 0;
   font-family: inherit;
 }
+
+/*
+  Tailwind preflight sets img { max-width: 100% }, which breaks Leaflet’s absolutely
+  positioned tile images (tiles collapse / misalign → “broken” map).
+*/
+.leaflet-container img {
+  max-width: none !important;
+}
