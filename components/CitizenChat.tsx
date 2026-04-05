@@ -88,7 +88,7 @@ export default function CitizenChat({ placeQuery }: Props) {
 
   return (
     <div className="flex h-[min(32rem,72vh)] min-h-[420px] flex-col rounded-xl border border-[var(--border)] bg-[var(--surface)]">
-      <div className="border-b border-[var(--border)] px-4 py-3">
+      <div className="hidden border-b border-[var(--border)] px-4 py-3">
         <h2 className="text-sm font-semibold text-white">Planning assistant</h2>
         <p className="text-xs text-slate-500">
           Free tier: set <code className="text-slate-400">GROQ_API_KEY</code> from

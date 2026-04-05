@@ -186,7 +186,7 @@ export default function OsmMobilityExplorer({
             ))}
           </ul>
         ) : (
-          <p className="rounded-lg border border-dashed border-[var(--border)] bg-[var(--surface-2)]/40 px-3 py-6 text-center text-sm text-slate-500">
+          <p className="hidden rounded-lg border border-dashed border-[var(--border)] bg-[var(--surface-2)]/40 px-3 py-6 text-center text-sm text-slate-500">
             No rows returned for this layer in the downloaded sample (Overpass or
             server list limit). The count on the left still reflects every match in
             OSM for this map area — try a smaller city or reload.

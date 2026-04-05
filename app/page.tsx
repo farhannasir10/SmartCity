@@ -84,7 +84,7 @@ export default async function Home({ searchParams }: PageProps) {
             <p className="mt-2 max-w-2xl text-base font-medium leading-snug text-slate-200">
               Turn any location into actionable insights in seconds.
             </p>
-            <p className="mt-1 max-w-xl text-sm text-slate-400">
+            <p className="mt-1 hidden max-w-xl text-sm text-slate-400">
               Search any city — <strong className="font-medium text-slate-300">weather</strong>{" "}
               and <strong className="font-medium text-slate-300">OpenStreetMap</strong>{" "}
               (parking, transit, fuel/EV, parks, food & drink, civic, culture) follow the map.{" "}
@@ -112,11 +112,12 @@ export default async function Home({ searchParams }: PageProps) {
               </p>
             ) : null}
             {!d.geocodeError ? <ScoreBadges scores={d.scores} /> : null}
-            <div className="mt-3">
+            <div className="mt-3 hidden">
               <SourceBadges sources={d.sources} />
             </div>
           </div>
-          <div className="flex flex-col items-start gap-2 sm:items-end">
+          <div className="hidden">
+            <div className="flex flex-col items-start gap-2 sm:items-end">
             <div className="flex gap-2 text-xs text-slate-500">
               <span className="rounded-full border border-[var(--border)] px-3 py-1">
                 Next.js · TypeScript
@@ -128,6 +129,7 @@ export default async function Home({ searchParams }: PageProps) {
             <p className="text-[10px] text-slate-600">
               Cached ~5m · {new Date(d.fetchedAt).toLocaleString()}
             </p>
+            </div>
           </div>
         </div>
       </header>
@@ -167,7 +169,7 @@ export default async function Home({ searchParams }: PageProps) {
             <h2 className="mb-2 text-sm font-semibold text-white">
               Smart insights
             </h2>
-            <p className="mb-2 text-[11px] text-slate-500">
+            <p className="mb-2 hidden text-[11px] text-slate-500">
               Plain-language read on weather, traffic, and signals — not raw
               percentages alone.
             </p>
@@ -242,6 +244,7 @@ export default async function Home({ searchParams }: PageProps) {
             </>
           ) : (
             <div className="space-y-3 text-sm text-slate-400">
+              <div className="hidden">
               {d.sources.traffic511 === "skipped" && !d.region.bayArea ? (
                 <p>
                   <strong className="text-slate-300">511</strong> only publishes
@@ -273,6 +276,7 @@ export default async function Home({ searchParams }: PageProps) {
                   Open-Meteo + OSM.
                 </p>
               )}
+              </div>
               {d.mobilityBrief ? (
                 <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)]/60 px-3 py-2 text-xs">
                   <p className="font-medium text-slate-300">
@@ -481,10 +485,10 @@ export default async function Home({ searchParams }: PageProps) {
 
         <section>
           <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
-            <h2 className="mb-2 text-sm font-semibold text-white">
+            <h2 className="mb-2 hidden text-sm font-semibold text-white">
               Planning assistant
             </h2>
-            <p className="mb-3 text-xs text-slate-500">
+            <p className="mb-3 hidden text-xs text-slate-500">
               Ask for timed plans or “what to avoid” — uses named places from this
               page plus weather. Add a free{" "}
               <code className="text-slate-400">GROQ_API_KEY</code>{" "}
